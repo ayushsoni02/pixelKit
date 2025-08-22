@@ -7,8 +7,21 @@ import Script from "next/script";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "ImageKit Next.js Integration",
-  description: "Demo of ImageKit integration with Next.js",
+  title: "PixelKit - Premium Digital Assets Marketplace",
+  description: "Discover high-quality images, videos, e-books, and PDFs. Perfect for your next creative project.",
+  keywords: "digital assets, stock photos, videos, e-books, PDFs, creative resources, design assets",
+  authors: [{ name: "PixelKit Team" }],
+  openGraph: {
+    title: "PixelKit - Premium Digital Assets Marketplace",
+    description: "Discover high-quality images, videos, e-books, and PDFs. Perfect for your next creative project.",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PixelKit - Premium Digital Assets Marketplace",
+    description: "Discover high-quality images, videos, e-books, and PDFs. Perfect for your next creative project.",
+  },
 };
 
 export default function RootLayout({
@@ -25,7 +38,7 @@ export default function RootLayout({
         />
         <Providers>
           <Header />
-          <main className="container mx-auto px-4 py-8">{children}</main>
+          {children}
         </Providers>
       </body>
     </html>
