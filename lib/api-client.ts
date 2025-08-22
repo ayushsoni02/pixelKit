@@ -1,12 +1,12 @@
-import {IOrder} from "@/models/Order";
-import { IProduct, ImageVariant } from "@/models/Product";
+import { IOrder } from "@/models/Order";
+import { IProduct, ImageVariant, VideoVariant, DocumentVariant } from "@/models/Product";
 import { Types } from "mongoose";
 
 export type ProductFormData = Omit<IProduct, "_id">;
 
 export interface CreateOrderData {
   productId: Types.ObjectId | string;
-  variant: ImageVariant;
+  variant: ImageVariant | VideoVariant | DocumentVariant;
 }
 
 type FetchOptions = {
@@ -34,7 +34,8 @@ class ApiClient {
     });
 
     if (!response.ok) {
-      throw new Error(await response.text());
+      const errorText = await response.text();
+      throw new Error(errorText);
     }
 
     return response.json();
@@ -55,8 +56,21 @@ class ApiClient {
     });
   }
 
+  async updateProduct(id: string, productData: Partial<ProductFormData>) {
+    return this.fetch<IProduct>(`/products/${id}`, {
+      method: "PUT",
+      body: productData,
+    });
+  }
+
+  async deleteProduct(id: string) {
+    return this.fetch<void>(`/products/${id}`, {
+      method: "DELETE",
+    });
+  }
+
   async getUserOrders() {
-    return this.fetch<IOrder[]>("/orders/user");
+    return this.fetch<IOrder[]>("/orders");
   }
 
   async createOrder(orderData: CreateOrderData) {
@@ -65,10 +79,27 @@ class ApiClient {
       productId: orderData.productId.toString(),
     };
 
-    return this.fetch<{ orderId: string; amount: number }>("/orders", {
+    return this.fetch<{ orderId: string; amount: number; currency: string; dbOrderId: string }>("/orders", {
       method: "POST",
       body: sanitizedOrderData,
     });
+  }
+
+  // Search and filter methods
+  async searchProducts(query: string) {
+    return this.fetch<IProduct[]>(`/products/search?q=${encodeURIComponent(query)}`);
+  }
+
+  async getProductsByCategory(category: string) {
+    return this.fetch<IProduct[]>(`/products/category/${category}`);
+  }
+
+  async getProductsByMediaType(mediaType: string) {
+    return this.fetch<IProduct[]>(`/products/type/${mediaType}`);
+  }
+
+  async getFeaturedProducts() {
+    return this.fetch<IProduct[]>("/products/featured");
   }
 }
 
