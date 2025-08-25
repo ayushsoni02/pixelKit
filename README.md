@@ -2,7 +2,7 @@
 
 A modern e-commerce platform for selling digital media assets including images, videos, e-books, and PDFs. Built with Next.js, TypeScript, and integrated with ImageKit for media storage and Razorpay for payments.
 
-## 🎯 Project Overview
+##  Project Overview
 
 PixelKit is a comprehensive digital media marketplace similar to Shutterstock and ImagesBazaar, where creators can sell their digital assets in various formats and sizes. The platform handles dynamic image resizing, multiple licensing options, and secure payment processing.
 
@@ -16,7 +16,7 @@ PixelKit is a comprehensive digital media marketplace similar to Shutterstock an
 - **User Authentication**: NextAuth.js for secure user management
 - **Admin Panel**: Complete product and order management system
 
-## 🏗️ Architecture
+##  Architecture
 
 ### Tech Stack
 
@@ -43,7 +43,7 @@ Each variant can have different pricing and licensing options.
 - **Personal License**: For individual use, personal projects
 - **Commercial License**: For business use, commercial projects
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -120,7 +120,7 @@ pixelKit/
 └── types.d.ts            # TypeScript definitions
 ```
 
-## 🔧 Key Features Implementation
+##  Key Features Implementation
 
 ### 1. Dynamic Image Processing
 - Images are stored in their original format
@@ -168,7 +168,7 @@ pixelKit/
 ### Payments
 - `POST /api/webhook/razorpay` - Razorpay webhook handler
 
-## 🎨 UI/UX Features
+##  UI/UX Features
 
 - **Responsive Design**: Mobile-first approach
 - **Modern Interface**: Clean, professional design
@@ -176,7 +176,7 @@ pixelKit/
 - **Shopping Cart**: Seamless checkout experience
 - **Order Tracking**: Real-time order status updates
 
-## 🔒 Security Features
+##  Security Features
 
 - **Authentication**: Secure user sessions
 - **Payment Security**: PCI-compliant payment processing
@@ -184,7 +184,7 @@ pixelKit/
 - **API Protection**: Rate limiting and input validation
 - **Data Encryption**: Sensitive data encryption
 
-## 🚀 Deployment
+##  Deployment
 
 ### Vercel Deployment (Recommended)
 
@@ -210,7 +210,7 @@ The application can be deployed on any platform that supports Next.js:
 - DigitalOcean App Platform
 - AWS Amplify
 
-## 📈 Future Enhancements
+##  Future Enhancements
 
 - **Advanced Search**: AI-powered image search
 - **Bulk Downloads**: Multiple asset purchases
@@ -221,7 +221,7 @@ The application can be deployed on any platform that supports Next.js:
 - **Advanced Licensing**: Extended license options
 - **Analytics**: Detailed sales and user analytics
 
-## 🤝 Contributing
+##  Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
@@ -233,14 +233,14 @@ The application can be deployed on any platform that supports Next.js:
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🆘 Support
+## Support
 
 For support and questions:
 - Create an issue in the repository
 - Contact the development team
 - Check the documentation
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - Next.js team for the amazing framework
 - ImageKit for media storage solutions
