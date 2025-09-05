@@ -26,6 +26,7 @@ import { IProduct, MEDIA_TYPES, CATEGORIES } from "@/models/Product";
 import { apiClient } from "@/lib/api-client";
 import ImageGallery from "./components/ImageGallery";
 
+
 export default function Home() {
   const [products, setProducts] = useState<IProduct[]>([]);
   const [filteredProducts, setFilteredProducts] = useState<IProduct[]>([]);
